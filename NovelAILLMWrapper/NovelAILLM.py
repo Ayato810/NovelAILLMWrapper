@@ -5,8 +5,8 @@ from langchain.callbacks.manager import CallbackManagerForLLMRun
 from novelai_api.Preset import Model
 from novelai_api.Tokenizer import Tokenizer
 from novelai_api.utils import b64_to_tokens
-from GenerationSettings import GenerationSettings
-from boilerplate import API
+from .GenerationSettings import GenerationSettings
+from .boilerplate import API
 
 
 class NovelAILLM(LLM):
