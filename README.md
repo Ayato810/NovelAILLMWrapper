@@ -14,7 +14,7 @@ NovelAILLMWrapper is a custom Language Model (LLM) wrapper created for the LangC
 
 NovelAI is a state-of-the-art Language Model developed by NovelAI, and the [NovelAI API](https://github.com/Aedial/novelai-api) provides programmatic access to this LLM.
 The LangChain framework is designed for developing applications powered by language models.
-This custom LLM rrapper serves as a bridge between LangChain and NovelAI, making it easier for developers to build applications that harness the capabilities of NovelAI.
+This custom LLM wrapper serves as a bridge between LangChain and NovelAI, making it easier for developers to build applications that harness the capabilities of NovelAI.
 
 ## Features
 
