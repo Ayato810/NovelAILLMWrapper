@@ -7,6 +7,7 @@ from novelai_api.Tokenizer import Tokenizer
 from novelai_api.utils import b64_to_tokens
 from .GenerationSettings import GenerationSettings
 from .boilerplate import API
+from novelai_api.BanList import BanList
 
 
 class NovelAILLM(LLM):
@@ -53,12 +54,13 @@ class NovelAILLM(LLM):
         return response
 
     def encode(self):
-        self.generation_settings.preset.repetition_penalty_whitelist_encoded = [
-            Tokenizer.encode(Model.Kayra, item) for item in self.generation_settings.repetition_penalty_whitelist
-        ]
-        self.generation_settings.preset.bad_words_encoded = [
-            Tokenizer.encode(Model.Kayra, item) for item in self.generation_settings.bad_words
-        ]
-        self.generation_settings.preset.stop_sequences_encoded = [
+        self.generation_settings.preset.repetition_penalty_whitelist = [[item for sublist in
+                                                                         [Tokenizer.encode(Model.Kayra, item) for item
+                                                                          in
+                                                                          self.generation_settings
+                                                                          .repetition_penalty_whitelist]
+                                                                         for item in sublist]]
+
+        self.generation_settings.preset.stop_sequences = [
             Tokenizer.encode(Model.Kayra, item) for item in self.generation_settings.stop_sequences
         ]
