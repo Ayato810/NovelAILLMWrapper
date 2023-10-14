@@ -7,7 +7,6 @@ from novelai_api.Tokenizer import Tokenizer
 from novelai_api.utils import b64_to_tokens
 from .GenerationSettings import GenerationSettings
 from .boilerplate import API
-from novelai_api.BanList import BanList
 
 
 class NovelAILLM(LLM):
